@@ -14,7 +14,7 @@ module.exports = () => {
     const randomNumber = Math.floor(Math.random() * 100000);
 
     data.clients.push({
-      id: i,
+      id: i + 1,
       nome: faker.name.findName(),
       cpf: cpf.generate(),
       cep: faker.address.zipCode("#####-###"),

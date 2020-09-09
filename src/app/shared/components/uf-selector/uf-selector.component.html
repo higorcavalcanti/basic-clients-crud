@@ -1,0 +1,14 @@
+<ng-template #loading>
+  <div class="form-control">
+    Carregando...
+  </div>
+</ng-template>
+
+<select class="form-control" *ngIf="(states$ | async) as states; else loading" [formControl]="ngControl.control" (blur)="propagateTouched($event)">
+  <option [value]="null" hidden>
+    Selecionar UF
+  </option>
+  <option *ngFor="let state of states" [value]="state.sigla">
+    {{ state.nome }}
+  </option>
+</select>

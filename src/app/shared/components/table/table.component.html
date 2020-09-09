@@ -1,0 +1,62 @@
+<table class="table table-hover">
+  <thead>
+  <tr>
+    <th scope="col" *ngFor="let col of columns">
+      {{ col?.name }}
+    </th>
+    <th *ngIf="actions">
+      Ações
+    </th>
+  </tr>
+  </thead>
+
+  <tbody *ngIf="loading">
+    <tr>
+      <th [attr.colspan]="columns?.length + 1" class="text-center">
+        Carregando...
+      </th>
+    </tr>
+  </tbody>
+
+  <tbody *ngIf="!loading">
+    <tr *ngIf="!data?.length">
+      <th [attr.colspan]="columns?.length + 1" class="text-center">
+        Falha ao carregar!
+      </th>
+    </tr>
+
+    <ng-container *ngIf="!loading && data?.length">
+      <tr *ngFor="let rowData of data">
+        <td *ngFor="let col of columns">
+          {{ rowData[ col.key ] }}
+        </td>
+        <td *ngIf="actions">
+          <button class="btn btn-primary btn-sm" (click)="edit(rowData)">
+            Editar
+          </button>
+          <button class="btn btn-danger btn-sm" (click)="delete(rowData)">
+            Remover
+          </button>
+        </td>
+      </tr>
+    </ng-container>
+  </tbody>
+
+  <tfoot>
+    <tr *ngIf="pagination">
+      <th [attr.colspan]="columns?.length + 1" class="text-center">
+        <div>
+          <pagination
+            [totalItems]="options?.total"
+            [itemsPerPage]="options?.limit"
+            [rotate]="true"
+            [maxSize]="options?.limit * 2"
+            previousText="Anterior"
+            nextText="Próximo"
+            (pageChanged)="pageChanged($event)"
+          ></pagination>
+        </div>
+      </th>
+    </tr>
+  </tfoot>
+</table>

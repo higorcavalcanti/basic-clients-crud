@@ -1,17 +1,8 @@
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col" *ngFor="let col of cols">
-        {{ col?.name }}
-      </th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <tr *ngFor="let client of clients">
-      <td *ngFor="let col of cols">
-        {{ client[ col.key ] }}
-      </td>
-    </tr>
-  </tbody>
-</table>
+<app-table
+  [columns]="columns"
+  [data]="clients"
+  [loading]="isLoading"
+  [(options)]="options"
+  (optionsChange)="loadData()"
+  (actionClick)="actionClick($event)"
+></app-table>

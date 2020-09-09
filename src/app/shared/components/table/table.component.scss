@@ -1,0 +1,15 @@
+:host {
+  ::ng-deep {
+    pagination {
+      ul.pagination {
+        justify-content: center;
+      }
+    }
+  }
+
+  table {
+    button {
+      margin: 0 3px;
+    }
+  }
+}
