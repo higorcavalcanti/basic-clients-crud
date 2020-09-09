@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "test-btg": {
+    "simple-client-manager": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/test-btg",
+            "outputPath": "dist/simple-client-manager",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -68,18 +68,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "test-btg:build"
+            "browserTarget": "simple-client-manager:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "test-btg:build:production"
+              "browserTarget": "simple-client-manager:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "test-btg:build"
+            "browserTarget": "simple-client-manager:build"
           }
         },
         "test": {
@@ -117,18 +117,18 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "test-btg:serve"
+            "devServerTarget": "simple-client-manager:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "test-btg:serve:production"
+              "devServerTarget": "simple-client-manager:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "test-btg",
+  "defaultProject": "simple-client-manager",
   "cli": {
     "analytics": false
   }
