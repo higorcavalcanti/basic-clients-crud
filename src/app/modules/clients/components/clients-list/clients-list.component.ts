@@ -53,7 +53,6 @@ export class ClientsListComponent implements OnInit {
         this.isLoading = false;
       },
       () => {
-        debugger
         this.clients = null;
         this.isLoading = false;
       }

@@ -27,7 +27,6 @@ export class ValidateControlDirective implements OnInit, OnDestroy {
   }
 
   createComponent() {
-    debugger
     this.viewContainer.clear();
     const factory = this.componentFactoryResolver.resolveComponentFactory(FormErrorsComponent);
     this.componentRef = this.viewContainer.createComponent(factory);
