@@ -5,14 +5,18 @@ import { PaginationModule } from "ngx-bootstrap/pagination";
 import { UfSelectorComponent } from './components/uf-selector/uf-selector.component';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { ModalMessageComponent } from './components/modal-message/modal-message.component';
+import { ValidateControlDirective } from './directives/validate-control.directive';
+import { FormErrorComponent } from './components/form-error/form-error.component';
+import { FormErrorsComponent } from './components/form-errors/form-errors.component';
 
 
 
 @NgModule({
-  declarations: [TableComponent, UfSelectorComponent, ModalMessageComponent],
+  declarations: [TableComponent, UfSelectorComponent, ModalMessageComponent, ValidateControlDirective, FormErrorComponent, FormErrorsComponent],
   exports: [
     TableComponent,
-    UfSelectorComponent
+    UfSelectorComponent,
+    ValidateControlDirective
   ],
   imports: [
     CommonModule,

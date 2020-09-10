@@ -7,73 +7,37 @@
     <div class="form-group">
       <label for="nome">Nome:</label>
       <input class="form-control" formControlName="nome" id="nome" placeholder="Nome" type="text">
-      <ng-container *ngIf="form.get('nome') as control">
-        <div class="invalid-feedback d-block" *ngIf="control.invalid && control.touched">
-          <ng-container *ngIf="control.hasError('required')"> O campo nome é obrigatório! </ng-container>
-        </div>
-      </ng-container>
     </div>
 
     <div class="form-group">
       <label for="cpf">CPF:</label>
-      <input class="form-control" formControlName="cpf" id="cpf" placeholder="CPF" type="text" cpf [textMask]="{mask: MASKS.cpf.textMask}">
-      <ng-container *ngIf="form.get('cpf') as control">
-        <div class="invalid-feedback d-block" *ngIf="control.invalid && control.touched">
-          <ng-container *ngIf="control.hasError('required')"> O campo CPF é obrigatório! </ng-container>
-          <ng-container *ngIf="control.hasError('cpf')"> CPF Inválido! </ng-container>
-        </div>
-      </ng-container>
+      <input class="form-control" formControlName="cpf" id="cpf" placeholder="CPF" type="text" cpf [textMask]="{mask: MASKS.cpf.textMask}" appValidateControl>
     </div>
 
     <div class="form-group">
       <label for="cep">CEP:</label>
-      <input class="form-control" formControlName="cep" id="cep" placeholder="CEP" type="text" cep [textMask]="{mask: MASKS.cep.textMask}">
-      <ng-container *ngIf="form.get('cep') as control">
-        <div class="invalid-feedback d-block" *ngIf="control.invalid && control.touched">
-          <ng-container *ngIf="control.hasError('required')"> O campo CEP é obrigatório! </ng-container>
-          <ng-container *ngIf="control.hasError('cep')"> CEP Inválido! </ng-container>
-        </div>
-      </ng-container>
+      <input class="form-control" formControlName="cep" id="cep" placeholder="CEP" type="text" cep [textMask]="{mask: MASKS.cep.textMask}" appValidateControl>
     </div>
 
     <div class="form-group">
       <label for="logradouro">Logradouro:</label>
-      <input class="form-control" formControlName="logradouro" id="logradouro" placeholder="Logradouro" type="text">
-      <ng-container *ngIf="form.get('logradouro') as control">
-        <div class="invalid-feedback d-block" *ngIf="control.invalid && control.touched">
-          <ng-container *ngIf="control.hasError('required')"> O campo logradouro é obrigatório! </ng-container>
-        </div>
-      </ng-container>
+      <input class="form-control" formControlName="logradouro" id="logradouro" placeholder="Logradouro" type="text" appValidateControl>
     </div>
 
     <div class="form-group">
       <label for="bairro">Bairro:</label>
-      <input class="form-control" formControlName="bairro" id="bairro" placeholder="Bairro" type="text">
-      <ng-container *ngIf="form.get('bairro') as control">
-        <div class="invalid-feedback d-block" *ngIf="control.invalid && control.touched">
-          <ng-container *ngIf="control.hasError('required')"> O campo bairro é obrigatório! </ng-container>
-        </div>
-      </ng-container>
+      <input class="form-control" formControlName="bairro" id="bairro" placeholder="Bairro" type="text" appValidateControl>
     </div>
 
     <div class="form-group">
       <label for="localidade">Localidade:</label>
-      <input class="form-control" formControlName="localidade" id="localidade" placeholder="Localidade" type="text">
-      <ng-container *ngIf="form.get('localidade') as control">
-        <div class="invalid-feedback d-block" *ngIf="control.invalid && control.touched">
-          <ng-container *ngIf="control.hasError('required')"> O campo localidade é obrigatório! </ng-container>
-        </div>
-      </ng-container>
+      <input class="form-control" formControlName="localidade" id="localidade" placeholder="Localidade" type="text" appValidateControl>
     </div>
 
     <div class="form-group">
       <label for="uf">UF:</label>
-      <app-uf-selector formControlName="uf" id="uf"></app-uf-selector>
-      <ng-container *ngIf="form.get('uf') as control">
-        <div class="invalid-feedback d-block" *ngIf="control.invalid && control.touched">
-          <ng-container *ngIf="control.hasError('required')"> O campo UF é obrigatório! </ng-container>
-        </div>
-      </ng-container>
+      <app-uf-selector formControlName="uf" id="uf" appValidateControl>
+      </app-uf-selector>
     </div>
 
     <button (click)="save()" class="btn btn-primary" type="submit">
